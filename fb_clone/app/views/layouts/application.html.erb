@@ -1,15 +1,23 @@
+
 <!DOCTYPE html>
 <html>
   <head>
-    <title>FbClone</title>
+    <title><%= yield(:title) %> | FB_clone</title>
     <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all',
+                                              'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-    <%= yield %>
+    <%= render 'layouts/header' %> 
+    
+    <div class="container">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    </div>
+
+      <%= yield %>
+      <%= render 'layouts/footer' %>
+    </div>
   </body>
 </html>

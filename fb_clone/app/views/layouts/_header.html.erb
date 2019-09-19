@@ -1,0 +1,27 @@
+<header class="navbar navbar-light" style="background-color: #e3f2fd;">
+  <div class="container">
+    <%= link_to "FaceBook Clone", authenticated_root_path, id: "logo" %>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Home", authenticated_root_path %></li>
+        <li><%= link_to "Help", '#' %></li>
+        <% if user_signed_in? %>
+          <li><%= link_to "Users", users_path %></li>
+          <li><%= link_to "Profile", current_user %></li>   
+          <li>
+            <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+          </li> 
+        <% else %>
+          <li><%= link_to "Log in", :new_user_session %></li> 
+          <li><%= link_to "Sign Up", :unauthenticated_root %></li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="center">
+  <% if user_signed_in? %>
+    Logged in as: <%= current_user.name %>
+  <% end %>
+</div>
