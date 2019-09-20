@@ -1,4 +1,15 @@
 <p id="notice"><%= notice %></p>
-
+<div class="row">
+  <h4> <%= link_to @user.name ,@user%> posts</h4>
+  <h4> <%= link_to "profile" ,@user%> posts</h4>
+  <div class="col-md-6 form-new-user col-md-offset-3">
+    <ul>
+    <% @user.posts.each do |post| %>
+        <li><%= link_to post.date, post_path(post) %></li>
+        <li><%= post.content %></li>
+    <% end %>
+    </ul>
+  </div>
+</div> 
 <%= link_to 'Edit', edit_user_registration_path(@user)%> |
 <%= link_to 'Back', posts_path %>

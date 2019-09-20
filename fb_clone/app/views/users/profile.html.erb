@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+<div class="row">
+  
+  <div class="col-md-6 form-new-user col-md-offset-3">
+    <ul>
+        <li><%= link_to @user.name, @user %></li>
+        <li><%= @user.email%></li>
+    </ul>
+  </div>
+</div>
+<%= link_to 'Edit', edit_user_registration_path(@user)%> |
+<%= link_to 'Back', @user %>
