@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-
+  before_action :user_signed_in?, only: [:create, :destroy]
   # GET /users
   # GET /users.json
   def index
@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find_by(id: params[:id])
+    @posts = @user.posts(page: params[:page])
   end
 
   # GET /users/1

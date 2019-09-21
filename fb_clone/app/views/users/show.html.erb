@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 <div class="row">
-  <h4> <%= link_to @user.name ,@user%> posts</h4>
-  <h4> <%= link_to "profile" ,@user%> posts</h4>
+  <h4> <%= link_to "#{@user.name} profile" ,profile_path%></h4>
+  <h4> <%= @user.name %> posts</h4> 
   <div class="col-md-6 form-new-user col-md-offset-3">
     <ul>
     <% @user.posts.each do |post| %>
