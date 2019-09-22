@@ -1,0 +1,12 @@
+
+ 
+    <section class="user_info">
+      <h1>
+        <%= gravatar_for @user %>
+        <%= link_to "#{@user.name}" ,@user%> <br>
+      </h1>
+      <% if @user != current_user %>
+        <%= link_to "Send friend request" ,'#' =%>
+      <% end %>
+    </section>
+    

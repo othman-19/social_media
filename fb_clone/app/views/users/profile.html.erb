@@ -1,12 +1,14 @@
-<p id="notice"><%= notice %></p>
+<% provide(:title, @user.name) %>
+
 <div class="row">
-  
-  <div class="col-md-6 form-new-user col-md-offset-3">
-    <ul>
-        <li><%= link_to @user.name, @user %></li>
-        <li><%= @user.email%></li>
-    </ul>
-  </div>
+<p id="notice"><%= notice %></p>
+  <aside class="col-md-4">
+    <%= render 'user' =%>
+    <p>family name:  <%= @user.email%></p>
+      <p>Date of birth:  <%= @user.email%></p>
+      <p>Location:  <%= @user.email%></p>
+      <p>Job:  <%= @user.email%></p>
+  </aside>
 </div>
 <%= link_to 'Edit', edit_user_registration_path(@user)%> |
 <%= link_to 'Back', @user %>
