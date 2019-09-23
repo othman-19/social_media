@@ -4,6 +4,7 @@
       <h1>
         <%= gravatar_for @user %>
         <%= link_to "#{@user.name}" ,@user%> <br>
+        <h3>Posts (<%= @user.posts.count %>)</h3>
       </h1>
       <% if @user != current_user %>
         <%= link_to "Send friend request" ,'#' =%>
