@@ -3,7 +3,7 @@
   <span class="user"><%= link_to post.user.name, post.user %></span>
   <span class="content">
     <%= post.content %>
-    <%- #image_tag post.picture.url if post.picture? -%>
+    <%= image_tag post.picture.url if post.picture? %>
   </span>
   <span class="timestamp">
     At: <%= (post.created_at) %> 
