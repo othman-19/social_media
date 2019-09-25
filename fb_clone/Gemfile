@@ -42,6 +42,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'foundation-rails'
 gem 'faker'
+gem 'rubocop-faker'
 gem 'carrierwave'           
 gem 'mini_magick'           
 gem 'will_paginate'        
