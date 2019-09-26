@@ -15,6 +15,8 @@ Rails.application.routes.draw do
       root 'devise/registrations#new', as: :unauthenticated_root
     end
   end
-  resources :users, only: [:index, :show]
+  resources :users, only: [:index, :show, :destroy]
   get '/users/:id/profile', to: 'users#profile', as: 'profile'
+  
+
 end
