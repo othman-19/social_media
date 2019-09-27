@@ -12,5 +12,7 @@ files:
     - "bin/*"
     - "db/*"
     - "config/*"
+    - "spec/*"
     - "Guardfile"
     - "Rakefile"
+   
