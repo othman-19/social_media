@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:create, :destroy]
-  before_action :current_user, only: [:create, :destroy]
+  before_action :set_post, only: %i[show edit update destroy]
+  before_action :authenticate_user!, only: %i[create destroy]
+  before_action :current_user, only: %i[create destroy]
   # GET /posts
   # GET /posts.json
   def index
@@ -10,8 +12,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1
   # GET /posts/1.json
-  def show
-  end
+  def show; end
 
   # GET /posts/new
   def new
@@ -19,8 +20,7 @@ class PostsController < ApplicationController
   end
 
   # GET /posts/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /posts
   # POST /posts.json
@@ -31,7 +31,7 @@ class PostsController < ApplicationController
         format.html { redirect_to authenticated_root_path, notice: 'Post was successfully created.' }
         format.json { render :show, status: :created, location: @post }
       else
-        format.html { redirect_to current_user, alert: 'post not created'}
+        format.html { redirect_to current_user, alert: 'post not created' }
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
@@ -62,13 +62,14 @@ class PostsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_post
-      @post = Post.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def post_params
-      params.require(:post).permit(:content, :picture)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_post
+    @post = Post.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def post_params
+    params.require(:post).permit(:content, :picture)
+  end
 end
