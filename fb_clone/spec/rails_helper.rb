@@ -26,8 +26,7 @@ RSpec.configure do |config|
   config.use_transactional_fixtures = false
   config.include FactoryBot::Syntax::Methods
   config.include Devise::Test::ControllerHelpers, type: :controller
-
-
+  config.include Warden::Test::Helpers
   config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)
   end
