@@ -19,7 +19,7 @@ Metrics/AbcSize:
 Metrics/ClassLength:
   Max: 150
 Metrics/BlockLength:
-  ExcludedMethods: ['describe']
+  ExcludedMethods: ['describe','configure']
 
 Style/Documentation:
   Enabled: false
