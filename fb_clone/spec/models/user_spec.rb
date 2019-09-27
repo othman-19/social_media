@@ -41,7 +41,7 @@ RSpec.describe User, type: :model do
     it 'is invalid with password under six(6) characters of length' do
       expect(user_small_password_length).to_not be_valid
     end
-    it "it show error message includes 'is too short (minimum is 6 characters)' password under six(6) characters of length " do
+    it "error message includes 'is too short (minimum is 6 characters)' for password under six(6) characters" do
       user_small_password_length.valid?
       expect(user_small_password_length.errors[:password]).to include('is too short (minimum is 6 characters)')
     end
