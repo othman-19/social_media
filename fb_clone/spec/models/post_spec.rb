@@ -22,7 +22,6 @@ RSpec.describe Post, type: :model do
     end
 
     it 'is invalid with content above three hundred(300) characters of length' do
-      p post_big_content
       expect(post_big_content).to_not be_valid
     end
   end
