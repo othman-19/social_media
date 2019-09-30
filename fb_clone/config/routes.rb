@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :posts
-
+  resources :posts do
+    resources :likes
+    resources :comments
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   devise_for :users, controllers: { registrations: 'users/registrations' }
@@ -18,4 +20,5 @@ Rails.application.routes.draw do
   end
   resources :users, only: %i[index show destroy]
   get '/users/:id/profile', to: 'users#profile', as: 'profile'
+
 end
