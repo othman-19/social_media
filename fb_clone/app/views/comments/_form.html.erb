@@ -1,0 +1,15 @@
+
+  <%= form_for [post, @comment] do |f| %>
+  <%= f.hidden_field :post_id, value: post.id %>
+  <div class="col-md-9 form-new-user col-md-offset">  
+  <%= f.text_field :body ,class:"form-control form-control-sm", placeholder: "Comment..."%>
+  </div>
+  <div class="col-md-3 form-new-user col-md-offset">
+  <%= f.submit "Comment", class: "btn btn-secondary" %> <br><br>
+  </div>
+  <% end %>
+
+
+
+
+    

@@ -1,0 +1,17 @@
+
+<li id="comment-<%= comment.id %>">
+  <%= link_to gravatar_for(comment.user, size: 30), comment.user %>
+  <span class="user"><%= link_to comment.user.name, comment.user %></span>
+  <span class="content">
+    <%= comment.body %>
+    
+  </span>
+  <span class="timestamp">
+    commented at: <%= (comment.created_at) %> 
+    <% if current_user == post.user || current_user == comment.user %>
+      <%= link_to 'Edit', edit_post_comment_path(post, comment)%> |
+      <%= link_to "delete",post_comment_path(post, comment) , method: :delete,
+                                       data: { confirm: "You sure?" } %>
+    <% end %>
+  </span>
+</li>
