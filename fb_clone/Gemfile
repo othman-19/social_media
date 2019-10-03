@@ -49,6 +49,7 @@ gem 'foundation-rails'
 gem 'mini_magick'
 gem 'rubocop-faker'
 gem 'will_paginate'
+gem 'font-awesome-rails'
 
 group :production do
   gem 'fog'
