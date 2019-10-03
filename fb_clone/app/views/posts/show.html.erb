@@ -4,7 +4,8 @@
   <strong>Content:</strong>
   <%= @post.content %>
 </p>
-
+<%= button_to 'Like', post_likes_path(@post), method: :post %>
+<p><%= @post.likes.count %> <%= (@post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
 <p>
   <strong>User:</strong>
   <%= @post.user_id %>
