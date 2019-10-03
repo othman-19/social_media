@@ -9,7 +9,7 @@
         <%= render post =%><br>
         <div class="row">
         <%= render "comments/form" ,post: post=%> 
-        <%= button_to 'Like', post_likes_path(post), method: :post %>
+        <%= link_to 'Like', post_likes_path(post), method: :post, class: "btn btn-info btn-sm" %>
         <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
         <span class="timestamp">
          Comments: <%= post.comments.count =%>
