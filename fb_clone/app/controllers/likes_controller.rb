@@ -9,8 +9,6 @@ class LikesController < ApplicationController
   end
 
   def create
-    @post = Post.find(params[:post_id])
-    @like = @post.likes.build(like_params)
     @like.user = current_user
     respond_to do |format|
       if @like.save!
@@ -29,10 +27,10 @@ class LikesController < ApplicationController
     end
 
     def set_like
-        #@like = @post.likes.find(params[:id])
+      @like = @post.likes.build(like_params)
     end
 
     def like_params
-      params.require(:like).permit(:user_id, :post_id)
+      params.permit(:user_id, :post_id)
     end
 end
