@@ -2,6 +2,7 @@
 #Users controller
 class UsersController < ApplicationController
   #before_action :set_user, only: %i[show edit update destroy]
+  before_action :set_post, only: %i[edit]
   before_action :authenticate_user!, only: %i[create destroy]
   before_action :current_user, only: %i[create destroy]
   
@@ -14,7 +15,6 @@ class UsersController < ApplicationController
   def show
     @user = User.find_by(id: params[:id])
     @posts = @user.posts
-    @post = @user.posts.build
     @comments = @post.comments
     @comment = current_user.comments.build(:post => @post)
   end
@@ -43,5 +43,8 @@ class UsersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:name, :email, :password)
+    end
+    def set_post
+      @post = Post.find(params[:id])
     end
 end

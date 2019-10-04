@@ -7,21 +7,7 @@
     <% @posts.each do |post| %>
       <ol class='posts'>
         <%= render post =%><br> 
-        <li>
-          <%= link_to raw('<i class="fa fa-thumbs-up"></i>'), post_likes_path(post), method: :post, class: "btn btn-info" %>
-          <%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%>
-          <%= link_to (fa_icon "comment"), "#", class: "btn btn-info" %> 
-          Comments: <%= post.comments.count =%>
-          <div class="row"> <br>
-            <%= render "comments/form" ,post: post=%>  
-          </div>
-        </li>
         
-        <% post.comments.each do |comment| %>
-          <ol class='posts'>
-            <%= render 'comments/comment', comment: comment,post: post =%>
-          </ol>
-        <% end %>
       </ol>
     <% end %>
   </div>

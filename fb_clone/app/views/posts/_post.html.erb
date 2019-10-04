@@ -1,10 +1,13 @@
 <li id="post-<%= post.id %>">
   <%= link_to gravatar_for(post.user, size: 50), post.user %>
+  
   <span class="user"><%= link_to post.user.name, post.user %></span>
+
   <span class="content">
     <%= post.content %>
     <%= image_tag post.picture.url if post.picture? %>
   </span>
+
   <span class="timestamp">
     Posted: <%= (post.created_at) %>
     <% if current_user == post.user %>
@@ -13,5 +16,22 @@
                                        data: { confirm: "You sure?" } %>
     <% end %>
   </span>
+
+  <li>
+    <%= link_to raw('<i class="fa fa-thumbs-up"></i>'), post_likes_path(post), method: :post, class: "btn btn-info" %>
+    <%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%>
+    <%= link_to (fa_icon "comment"), "#", class: "btn btn-info" %> 
+    Comments: <%= post.comments.count =%>    
+  </li>
+
+  <div class="row"> <br>
+    <%= render "comments/form" ,post: post=%>  
+  </div>
+
+  <% post.comments.each do |comment| %>
+    <ol class='posts'>
+      <%= render 'comments/comment', comment: comment,post: post =%>
+    </ol>
+  <% end %>
 </li>
 
