@@ -44,7 +44,7 @@ class CommentsController < ApplicationController
     @comment = @post.comments.build(comment_params)
     @comment.user = current_user
     respond_to do |format|
-      if @comment.save!
+      if @comment.save
         format.html { redirect_to authenticated_root_path, notice: 'Post commented.' }
         format.json { render :show, status: :created, location: @post }
       else

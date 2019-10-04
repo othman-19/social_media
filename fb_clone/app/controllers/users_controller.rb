@@ -8,13 +8,13 @@ class UsersController < ApplicationController
   
   
   def index
-    @users = User.all
+    @users = User.paginate(page: params[:page], per_page: 20)
   end
 
   
   def show
     @user = User.find_by(id: params[:id])
-    @posts = @user.posts
+    @posts = @user.posts.paginate(page: params[:page])
     @comments = @post.comments
     @comment = current_user.comments.build(:post => @post)
   end

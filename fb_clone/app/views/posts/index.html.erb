@@ -3,12 +3,15 @@
   <p id="alert"><%= notice %></p>  
   <div class="col-md-6 form-new-user col-md-offset-3">    
     <h1>Posts</h1> 
+    
     <%=render "form",post: @post =%> <br>
+    
     <% @posts.each do |post| %>
+      
       <ol class='posts'>
-        <%= render post =%><br> 
-        
+        <%= render post =%><br>         
       </ol>
     <% end %>
+    <%= will_paginate %>
   </div>
 </div>
