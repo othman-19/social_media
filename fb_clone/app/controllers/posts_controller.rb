@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i[show edit update destroy]
   before_action :authenticate_user!, only: %i[create destroy]
   before_action :current_user, only: %i[create destroy]
-  
+  before_action :authorized?, only: %i[update destroy]
   def index
     @posts = Post.paginate(page: params[:page], per_page: 5)
   end
@@ -62,5 +62,9 @@ class PostsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
       params.require(:post).permit(:content, :picture)
+    end
+
+    def authorized?
+      redirect_to :authenticated_root unless @post.user_id == current_user.id
     end
 end

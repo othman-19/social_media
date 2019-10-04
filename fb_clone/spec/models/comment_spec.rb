@@ -22,7 +22,7 @@ RSpec.describe Comment, type: :model do
 
     it 'is invalid without a post_id' do
       comment.post_id = nil
-      expect(post).to_not be_valid
+      expect(comment).to_not be_valid
     end
 
     it 'is invalid with content above three hundred(200) characters of length' do

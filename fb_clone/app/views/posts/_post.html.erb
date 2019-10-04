@@ -19,7 +19,7 @@
   </span>
 
   <li>
-    <%= link_to raw('<i class="fa fa-thumbs-up"></i>'), post_likes_path(post), method: :post, class: "btn btn-info" %>
+    <%= link_to raw('<i class="fa fa-thumbs-up">.</i>'), post_likes_path(post), method: :post, class: "btn btn-info" %>
     <%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%>
     <%= link_to (fa_icon "comment"), "#", class: "btn btn-info" %> 
     Comments: <%= post.comments.count =%>    

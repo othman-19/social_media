@@ -16,7 +16,7 @@ RSpec.describe 'Delete user', type: :feature do
     fill_in 'user_password_confirmation', with: tester6.password
     click_on 'Sign up'
     visit users_path
-    page.evaluate_script('window.confirm = function() { return true; }')
+    #page.evaluate_script('window.confirm = function() { return true; }')
     click_on('Destroy')
     expect(page).to have_content('successfully destroyed')
     sleep(2)

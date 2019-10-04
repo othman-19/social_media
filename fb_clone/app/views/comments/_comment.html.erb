@@ -9,8 +9,8 @@
   <span class="timestamp">
     commented at: <%= (comment.created_at) %> 
     <% if current_user == post.user || current_user == comment.user %>
-      <%= link_to 'Edit', edit_post_comment_path(post, comment)%> |
-      <%= link_to "delete",post_comment_path(post, comment) , method: :delete,
+      <%= link_to 'Edit comment', edit_post_comment_path(post, comment)%> |
+      <%= link_to "remove",post_comment_path(post, comment) , method: :delete,
                                        data: { confirm: "You sure?" } %>
     <% end %>
   </span>
