@@ -5,6 +5,10 @@ class CommentsController < ApplicationController
   before_action :set_comment, only: %i[update destroy edit]
   before_action :authenticate_user!, only: %i[create destroy]
   before_action :current_user, only: %i[create destroy]
+  before_action :authorized_to_delete?, only: %i[destroy]
+  before_action :authorized_to_edit?, only: %i[edit]
+
+  
 
   def index
     @comments = Comment.all
@@ -66,5 +70,14 @@ class CommentsController < ApplicationController
 
     def set_comment
       @comment = @post.comments.find(params[:id])
+    end
+
+    def authorized_to_delete?
+      redirect_to :authenticated_root unless @post.user_id == current_user.id ||
+                                             @comment.user_id == current_user.id
+    end
+
+    def authorized_to_edit?
+      redirect_to :authenticated_root unless @comment.user_id == current_user.id
     end
 end
