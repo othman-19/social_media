@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class LikesController < ApplicationController
-  #before_action :set_post
-  #before_action :set_like
+  # before_action :set_post
+  # before_action :set_like
   before_action :authenticate_user!, only: %i[create destroy]
   before_action :current_user, only: %i[create destroy]
 
@@ -9,7 +11,7 @@ class LikesController < ApplicationController
   end
 
   def create
-    if already_liked? 
+    if already_liked?
       respond_to do |format|
         format.html { redirect_to request.referer, alert: 'already liked!' }
       end
@@ -17,10 +19,10 @@ class LikesController < ApplicationController
       @post = Post.find(params[:post_id])
       @like = @post.likes.build(like_params)
       @like.user = current_user
-      
+
       respond_to do |format|
         if @like.save!
-          format.html { redirect_to request.referer}
+          format.html { redirect_to request.referer }
           format.json { render :show, status: :created, location: @post, alert: 'Post liked!' }
         else
           format.html { redirect_to authenticated_root_path, alert: 'No like!' }
@@ -29,22 +31,23 @@ class LikesController < ApplicationController
       end
     end
   end
-  
-    private
-    def set_post
-      @post = Post.find(params[:post_id])
-    end
 
-    def set_like
-      @like = @post.likes.build(like_params)
-    end
+  private
 
-    def like_params
-      params.permit(:user_id, :post_id)
-    end
+  def set_post
+    @post = Post.find(params[:post_id])
+  end
 
-    def already_liked?
-      Like.where(user_id: current_user.id, post_id:
-      params[:post_id]).exists?
-    end
+  def set_like
+    @like = @post.likes.build(like_params)
+  end
+
+  def like_params
+    params.permit(:user_id, :post_id)
+  end
+
+  def already_liked?
+    Like.where(user_id: current_user.id, post_id:
+    params[:post_id]).exists?
+  end
 end

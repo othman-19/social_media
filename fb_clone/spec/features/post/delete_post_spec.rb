@@ -12,7 +12,7 @@ RSpec.describe 'Delete post', type: :feature do
     click_on 'Sign up'
     fill_in 'post_content', with: 'This is a new post'
     click_on 'Post'
-    #page.evaluate_script('window.confirm = function() { return true; }')
+    # page.evaluate_script('window.confirm = function() { return true; }')
     click_on('delete')
     expect(page).to have_content('Post was successfully destroyed')
     sleep(2)

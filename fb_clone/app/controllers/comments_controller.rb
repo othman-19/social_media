@@ -1,5 +1,6 @@
 # frozen_string_literal: true
-#Comments controller
+
+# Comments controller
 class CommentsController < ApplicationController
   before_action :set_post, only: %i[update destroy create edit]
   before_action :set_comment, only: %i[update destroy edit]
@@ -8,20 +9,18 @@ class CommentsController < ApplicationController
   before_action :authorized_to_delete?, only: %i[destroy]
   before_action :authorized_to_edit?, only: %i[edit]
 
-  
-
   def index
     @comments = Comment.all
    end
-  
-   def new
-    @comment = Comment.new
-   end
 
-   def edit
+  def new
+    @comment = Comment.new
+  end
+
+  def edit
     @comment = @post.comments.find(params[:id])
-   end
-  
+  end
+
   def update
     @post = Post.find(params[:post_id])
     @comment = @post.comments.find(params[:id])
@@ -60,24 +59,24 @@ class CommentsController < ApplicationController
 
   private
 
-    def comment_params
-      params.require(:comment).permit(:body, :post_id)
-    end
+  def comment_params
+    params.require(:comment).permit(:body, :post_id)
+  end
 
-    def set_post
-      @post = Post.find(params[:post_id])
-    end
+  def set_post
+    @post = Post.find(params[:post_id])
+  end
 
-    def set_comment
-      @comment = @post.comments.find(params[:id])
-    end
+  def set_comment
+    @comment = @post.comments.find(params[:id])
+  end
 
-    def authorized_to_delete?
-      redirect_to :authenticated_root unless @post.user_id == current_user.id ||
-                                             @comment.user_id == current_user.id
-    end
+  def authorized_to_delete?
+    redirect_to :authenticated_root unless @post.user_id == current_user.id ||
+                                           @comment.user_id == current_user.id
+  end
 
-    def authorized_to_edit?
-      redirect_to :authenticated_root unless @comment.user_id == current_user.id
-    end
+  def authorized_to_edit?
+    redirect_to :authenticated_root unless @comment.user_id == current_user.id
+  end
 end

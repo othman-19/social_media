@@ -1,5 +1,6 @@
 # frozen_string_literal: true
-#Posts controller
+
+# Posts controller
 class PostsController < ApplicationController
   before_action :set_post, only: %i[show edit update destroy]
   before_action :authenticate_user!, only: %i[create destroy]
@@ -13,8 +14,8 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-    #@comments = @post.comments
-    #@comment = @post.commets.build
+    # @comments = @post.comments
+    # @comment = @post.commets.build
   end
 
   def edit; end
@@ -54,17 +55,17 @@ class PostsController < ApplicationController
 
   private
 
-    # Use callbacks to share common setup or constraints between actions.
-    def set_post
-      @post = Post.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_post
+    @post = Post.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def post_params
-      params.require(:post).permit(:content, :picture)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def post_params
+    params.require(:post).permit(:content, :picture)
+  end
 
-    def authorized?
-      redirect_to :authenticated_root unless @post.user_id == current_user.id
-    end
+  def authorized?
+    redirect_to :authenticated_root unless @post.user_id == current_user.id
+  end
 end

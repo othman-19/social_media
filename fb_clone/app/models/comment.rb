@@ -1,5 +1,6 @@
 # frozen_string_literal: true
-#Comment model
+
+# Comment model
 class Comment < ApplicationRecord
   belongs_to :user
   belongs_to :post

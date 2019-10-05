@@ -3,7 +3,6 @@
 require 'rails_helper'
 RSpec.describe Like, type: :model do
   describe 'Like model validation' do
-
     let(:like) { FactoryBot.create(:like) }
 
     it 'has a valid factory' do
@@ -31,4 +30,3 @@ RSpec.describe Like, type: :model do
     end
   end
 end
-

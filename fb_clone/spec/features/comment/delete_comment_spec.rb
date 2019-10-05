@@ -14,7 +14,7 @@ RSpec.describe 'Delete comment', type: :feature do
     click_on 'Post'
     fill_in 'comment_body', with: 'This is a new comment'
     click_on 'Comment'
-    #page.evaluate_script('window.confirm = function() { return true; }')
+    # page.evaluate_script('window.confirm = function() { return true; }')
     click_on('remove')
     expect(page).to have_content('Comment removed')
     sleep(2)
