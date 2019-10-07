@@ -53,7 +53,6 @@ gem 'font-awesome-rails'
 
 group :production do
   gem 'fog'
-  gem 'pg', '>= 0.18', '< 2.0'
 end
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -75,7 +74,6 @@ group :development do
 end
 
 group :test do
-  gem 'minitest'
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'

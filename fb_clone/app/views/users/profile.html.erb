@@ -4,10 +4,10 @@
 <p id="notice"><%= notice %></p>
   <aside class="col-md-4">
     <%= render 'user' =%>
-    <p>family name:  <%= @user.email%></p>
-      <p>Date of birth:  <%= @user.email%></p>
-      <p>Location:  <%= @user.email%></p>
-      <p>Job:  <%= @user.email%></p>
+    <p>family name:  <%="@user.familly_name" %></p>
+      <p>Date of birth:  <%= "@user.birth_day"%></p>
+      <p>Location:  <%= "@user.location"%></p>
+      <p>Job:  <%="@user.job"%></p>
   </aside>
 </div>
 <%= link_to 'Edit', edit_user_registration_path(@user)%> |
