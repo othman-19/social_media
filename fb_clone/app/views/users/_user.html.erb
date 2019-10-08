@@ -7,7 +7,6 @@
         <h3>Posts (<%= @user.posts.count %>)</h3>
       </h1>
       <% if @user != current_user %>
-        <%= link_to "Send friend request" ,'#' =%>
-      <% end %>
+      <%= link_to "Add Friend", friendships_path(:friend_id => user), :method => :post %>      <% end %>
     </section>
     

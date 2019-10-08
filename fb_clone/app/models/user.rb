@@ -11,6 +11,9 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :comments, dependent: :destroy
 
+  has_many :friendships
+  has_many :inverse_friendships, :class_name => "Friendship", :foreign_key => "friend_id"
+
   before_save :downcase_email
 
   validates :name, presence: true, length: { maximum: 50 }, allow_blank: false

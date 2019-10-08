@@ -13,7 +13,21 @@
         <%= link_to "Send friend request" ,'#' =%>
       <% end %>
     </section>
+    <section>
+    <h1>Friends</h1>
+      <ul>
+        <% for friendship in @user.friendships %>
+          <li>
+            <%=h friendship.friend.name %>
+            (<%= link_to "remove", friendship, :method => :delete %>)
+          </li>
+        <% end %>
+      </ul>
+      </section>
   </aside>
+
+
+
   <div class="col-md-8">
     <%= render "posts/form", post: @post%>
   </div>
