@@ -10,7 +10,10 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :comments, dependent: :destroy
-
+  has_many :friend_requests, dependent: :destroy
+  has_many :pending_friends, through: :friend_requests, source: :friend
+  has_many :friendships, dependent: :destroy
+  has_many :friends
   before_save :downcase_email
 
   validates :name, presence: true, length: { maximum: 50 }, allow_blank: false
@@ -25,5 +28,8 @@ class User < ApplicationRecord
   # Converts email to all lower-case.
   def downcase_email
     self.email = email.downcase
+  end
+  def remove_friend(friend)
+    user.friends.destroy(friend)
   end
 end

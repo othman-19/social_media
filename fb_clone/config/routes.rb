@@ -2,6 +2,9 @@
 
 # Routes.rb
 Rails.application.routes.draw do
+  get 'friends/index'
+  get 'friends/destroy'
+  resources :friend_requests
   resources :posts do
     resources :comments
   end
