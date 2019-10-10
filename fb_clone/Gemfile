@@ -45,11 +45,11 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap-will_paginate'
 gem 'carrierwave'
 gem 'faker'
+gem 'font-awesome-rails'
 gem 'foundation-rails'
 gem 'mini_magick'
 gem 'rubocop-faker'
 gem 'will_paginate'
-gem 'font-awesome-rails'
 
 group :production do
   gem 'fog'
