@@ -13,7 +13,8 @@ class User < ApplicationRecord
   has_many :friend_requests, dependent: :destroy
   has_many :pending_friends, through: :friend_requests, source: :friend
   has_many :friendships, dependent: :destroy
-  has_many :friends
+  has_many :friends, through: :friendships
+
   before_save :downcase_email
 
   validates :name, presence: true, length: { maximum: 50 }, allow_blank: false
@@ -29,6 +30,7 @@ class User < ApplicationRecord
   def downcase_email
     self.email = email.downcase
   end
+
   def remove_friend(friend)
     user.friends.destroy(friend)
   end

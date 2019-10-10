@@ -13,7 +13,7 @@
         <%= link_to 'New Post', new_post_path %>
 
       <% else %>
-      <%= link_to "Add Friend", friendships_path(:friend_id => user), :method => :post %>
+      <%= link_to "Add Friend", friend_requests_path(:friend_id => user), :method => :post %>
 
       <% end %>
     </ul>
