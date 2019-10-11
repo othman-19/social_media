@@ -11,10 +11,11 @@
         <%= link_to "Destroy", user, method: :delete,
                                         data: { confirm: "You sure?" } %>  |
         <%= link_to 'New Post', new_post_path %>
-
+      <% elsif @friends.include?(user)%>
+      <%= link_to "Delete friend", friend_path(user),method: :delete %>
+        
       <% else %>
-      <%= link_to "Add Friend", friend_requests_path(:friend_id => user), :method => :post %>
-
+        <%= link_to "Add Friend", friend_requests_path(:friend_id => user), :method => :post %>
       <% end %>
     </ul>
   <% end %>

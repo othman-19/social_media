@@ -8,7 +8,7 @@ class FriendsController < ApplicationController
   end
 
   def destroy
-    current_user.remove_friend(@friend)
+    current_user.remove_friend(current_user,@friend)
     respond_to do |format|
       format.html { redirect_to current_user, notice: 'Friend removed' }
       format.json { head :no_content }

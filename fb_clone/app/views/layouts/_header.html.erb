@@ -7,7 +7,7 @@
         <% if user_signed_in? %>
           <li><%= link_to (fa_icon "bell", text: "News"), authenticated_root_path %></li> 
           <li><%= link_to (fa_icon "envelope", text: "Messages"), authenticated_root_path %></li> 
-          <li><%= link_to (fa_icon "user-plus", text: "Friends"), authenticated_root_path%></li> 
+          <li><%= link_to (fa_icon "user-plus", text: "Friends"), friend_requests_index_path%></li> 
           <li><%= link_to (fa_icon "users",text: "users"), users_path %></li>
           <li><%= link_to (fa_icon "user", text: "profile"), profile_path(current_user)%></li>   
           <li><%= link_to (fa_icon "sign-out", text: 'Log out'), destroy_user_session_path, method: :delete %></li> 

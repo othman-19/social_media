@@ -1,0 +1,36 @@
+
+
+<% @incoming.each do |coming| %>
+ <ul class = "posts">
+    <li>  
+        <%= link_to gravatar_for(coming.friend, size: 50), @friend =%>
+        <span class="user"><%= link_to coming.friend.name, coming.friend %></span>
+       
+        <%= link_to "Delete friend request", friend_request_path(coming), :method => :delete, class:'btn btn-primary' %>
+        <%= link_to "Accept friend request", friend_request_path(coming), :method => :put, class:'btn btn-primary' %>
+    </li>
+    </ul>
+<% end %>
+
+<% @outgoing.each do |sent| %>
+    <ul class = "posts">
+    <li>   
+        <%= link_to gravatar_for(sent.friend, size: 50), @friend =%>
+        <span class="user"><%= link_to sent.friend.name, sent.friend %></span>
+       
+        <%= link_to "Delete friend request", friend_request_path(sent), :method => :delete, class:'btn btn-primary' %>
+    </li>
+    </ul>
+<% end %>
+
+<% @friends.each do |friend| %>
+    <ul class = "posts">
+    <li>   
+        <%= link_to gravatar_for(friend, size: 50), @friend =%>
+        <span class="user"><%= link_to friend.name, friend %></span>
+       
+        <%= link_to "Delete friend", friend_path(friend),method: :delete, class:'btn btn-primary' %>
+    </li>
+    </ul>
+<% end %>
+

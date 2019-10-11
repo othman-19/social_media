@@ -4,6 +4,7 @@ class FriendRequestsController < ApplicationController
   before_action :set_friend_request, except: %i[index create]
 
   def index
+    @friends = current_user.friends
     @incoming = FriendRequest.where(friend: current_user)
     @outgoing = current_user.friend_requests
   end

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :friend_requests
   get 'friends/index'
   get 'friends/destroy'
+  resources :friends
   resources :posts do
     resources :comments
   end

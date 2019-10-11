@@ -1,0 +1,10 @@
+<% friends.each do |friend| %>
+    <ul class = "posts">
+    <li>   
+        <%= link_to gravatar_for(friend, size: 50), @friend =%>
+        <span class="user"><%= link_to friend.name, friend %></span>
+       
+        <%= link_to "Delete friend", friend_path(friend),method: :delete, class:'btn btn-primary' %>
+    </li>
+    </ul>
+<% end %>
