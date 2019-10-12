@@ -24,15 +24,14 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false }
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: false, allow_blank: false
 
-  def remove_friend(user ,friend)
+  def remove_friend(user, friend)
     user.friends.destroy(friend)
   end
+
   private
 
   # Converts email to all lower-case.
   def downcase_email
     self.email = email.downcase
   end
-
-  
 end

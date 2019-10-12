@@ -6,10 +6,12 @@ class UsersController < ApplicationController
   before_action :set_post, only: %i[edit]
   before_action :authenticate_user!, only: %i[create destroy]
   before_action :current_user, only: %i[create destroy]
+  before_action :set_friends
 
   def index
     @users = User.paginate(page: params[:page], per_page: 20)
-    @friends = current_user.friends
+    @incoming = FriendRequest.where(friend: current_user)
+    @outgoing = current_user.friend_requests
   end
 
   def show
@@ -45,5 +47,8 @@ class UsersController < ApplicationController
 
   def set_post
     @post = Post.find(params[:id])
+  end
+  def set_friends
+    @friends = current_user.friends
   end
 end

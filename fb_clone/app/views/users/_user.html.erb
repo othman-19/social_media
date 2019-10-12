@@ -6,8 +6,20 @@
         <%= link_to "#{@user.name}" ,@user%> <br>
         <h3>Posts (<%= @user.posts.count %>)</h3>
       </h1>
-      <% if @user != current_user %>
-      <%= link_to "Add Friend", friend_requests_path(:friend_id => @user), :method => :post %>     
-       <% end %>
+      <% if current_user == @user %>
+        <%= link_to 'Edit', edit_user_registration_path(@user) %> |
+        <%= link_to "Destroy", @user, method: :delete,
+                                        data: { confirm: "You sure?" } %>  |
+        <%= link_to 'New Post', new_post_path %>
+      <% elsif @friends.include?(@user)%>
+      <%= link_to "Delete friend", friend_path(@user),method: :delete %>
+      <% elsif @user.pending_friends.include?(current_user) %>
+      <%= link_to "Delete friend request", friend_request_path(@user), :method => :delete %>
+      <%= link_to "Accept friend request", friend_request_path(@user), :method => :put %>
+      <% elsif current_user.pending_friends.include?(@user) %>
+      <%= link_to "Delete friend request", friend_request_path(@user), :method => :delete %> 
+      <% else %>
+        <%= link_to "Add Friend", friend_requests_path(:friend_id => @user), :method => :post %>
+      <% end %>
     </section>
     

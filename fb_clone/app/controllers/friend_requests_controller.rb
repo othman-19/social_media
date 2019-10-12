@@ -14,10 +14,10 @@ class FriendRequestsController < ApplicationController
     @friend_request = current_user.friend_requests.new(friend: friend)
     respond_to do |format|
       if @friend_request.save
-        format.html { redirect_to current_user, notice: 'friend request created.' }
+        format.html { redirect_to users_path, notice: 'friend request created.' }
         format.json { render :show, status: :created, location: @friend_request }
       else
-        format.html { redirect_to current_user, alert: 'friend request not created.' }
+        format.html { redirect_to users_path, alert: 'friend request not created.' }
         format.json { render json: @friend_request.errors, status: :unprocessable_entity }
       end
     end
@@ -34,7 +34,7 @@ class FriendRequestsController < ApplicationController
   def destroy
     @friend_request.destroy
     respond_to do |format|
-      format.html { redirect_to current_user, notice: 'Friend not accepted' }
+      format.html { redirect_to current_user, notice: 'Friend request deleted' }
       format.json { head :no_content }
     end
   end
