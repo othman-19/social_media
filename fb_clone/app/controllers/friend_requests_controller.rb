@@ -2,7 +2,7 @@
 
 class FriendRequestsController < ApplicationController
   before_action :set_friend_request, except: %i[index create]
-
+  before_action :set_friend_requests_count
   def index
     @friends = current_user.friends
     @incoming = FriendRequest.where(friend: current_user)
@@ -43,5 +43,9 @@ class FriendRequestsController < ApplicationController
 
   def set_friend_request
     @friend_request = FriendRequest.find(params[:id])
+  end
+
+  def set_friend_requests_count
+    @incoming_count = FriendRequest.where(friend: current_user).count
   end
 end

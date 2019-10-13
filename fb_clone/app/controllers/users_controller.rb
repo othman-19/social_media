@@ -7,12 +7,12 @@ class UsersController < ApplicationController
   before_action :authenticate_user!, only: %i[create destroy]
   before_action :current_user, only: %i[create destroy]
   before_action :set_friends
-
+  before_action :set_friend_requests_count
+  
   def index
     @users = User.paginate(page: params[:page], per_page: 20)
     @incoming = FriendRequest.where(friend: current_user)
     @outgoing = current_user.friend_requests
-    @current_request = current_user.friend_requests.where(friend: @user).first
   end
 
   def show
@@ -24,6 +24,7 @@ class UsersController < ApplicationController
   end
 
   def profile
+    
     @user = User.find_by(id: params[:id])
   end
 
@@ -56,5 +57,8 @@ class UsersController < ApplicationController
   end
   def set_friend_request
     @friend_request = FriendRequest.find(params[:id])
+  end
+  def set_friend_requests_count
+    @incoming_count = FriendRequest.where(friend: current_user).count
   end
 end

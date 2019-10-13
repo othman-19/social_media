@@ -6,6 +6,8 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, only: %i[create destroy]
   before_action :current_user, only: %i[create destroy]
   before_action :authorized?, only: %i[update destroy]
+  before_action :set_friend_requests_count
+  
   def index
     @posts = Post.paginate(page: params[:page], per_page: 5)
   end
@@ -67,5 +69,9 @@ class PostsController < ApplicationController
 
   def authorized?
     redirect_to :authenticated_root unless @post.user_id == current_user.id
+  end
+
+  def set_friend_requests_count
+    @incoming_count = FriendRequest.where(friend: current_user).count
   end
 end

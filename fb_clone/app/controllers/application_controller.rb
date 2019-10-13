@@ -14,4 +14,5 @@ class ApplicationController < ActionController::Base
   def instantiate_comment
     @comment = Comment.new
   end
+  
 end

@@ -81,6 +81,18 @@ p {
   }
 }
 
+#notification{
+  color: white;
+  background-color: rgb(243, 74, 74);
+  border-radius: 10px;
+  position: absolute;
+  top: 8px;
+  right: 2px;
+  @include box_sizing;
+  padding: 1px;
+
+}
+
 /* footer */
 
 footer {

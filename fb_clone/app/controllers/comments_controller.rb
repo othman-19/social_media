@@ -8,6 +8,7 @@ class CommentsController < ApplicationController
   before_action :current_user, only: %i[create destroy]
   before_action :authorized_to_delete?, only: %i[destroy]
   before_action :authorized_to_edit?, only: %i[edit]
+  before_action :set_friend_requests_count
 
   def index
     @comments = Comment.all
@@ -78,5 +79,9 @@ class CommentsController < ApplicationController
 
   def authorized_to_edit?
     redirect_to :authenticated_root unless @comment.user_id == current_user.id
+  end
+
+  def set_friend_requests_count
+    @incoming_count = FriendRequest.where(friend: current_user).count
   end
 end
