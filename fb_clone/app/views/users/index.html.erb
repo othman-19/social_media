@@ -14,11 +14,10 @@
       <% elsif @friends.include?(user)%>
       <%= link_to "Delete friend", friend_path(user),method: :delete %>
       <% elsif user.pending_friends.include?(current_user) %>
-      <%= link_to "Delete friend request", friend_request_path(user), :method => :delete, class:'btn btn-primary' %>
-      <%= link_to "Accept friend request", friend_request_path(user), :method => :put, class:'btn btn-primary' %>
+      <%= link_to "Delete friend request", friend_request_path(get_request(user, current_user)), :method => :delete, class:'btn btn-primary' %>
+      <%= link_to "Accept friend request", friend_request_path(get_request(user, current_user)), :method => :put, class:'btn btn-primary' %>
       <% elsif current_user.pending_friends.include?(user) %>
-      <%= link_to "Delete friend request", friend_request_path(user), :method => :delete, class:'btn btn-primary' %>
-        
+      <%= link_to "Delete friend request", friend_request_path(get_request(current_user, user)), :method => :delete, class:'btn btn-primary' %> 
       <% else %>
         <%= link_to "Add Friend", friend_requests_path(:friend_id => user), :method => :post %>
       <% end %>

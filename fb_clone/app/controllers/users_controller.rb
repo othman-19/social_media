@@ -12,6 +12,7 @@ class UsersController < ApplicationController
     @users = User.paginate(page: params[:page], per_page: 20)
     @incoming = FriendRequest.where(friend: current_user)
     @outgoing = current_user.friend_requests
+    @current_request = current_user.friend_requests.where(friend: @user).first
   end
 
   def show
@@ -19,6 +20,7 @@ class UsersController < ApplicationController
     @posts = @user.posts.paginate(page: params[:page])
     @comments = @post.comments
     @comment = current_user.comments.build(post: @post)
+
   end
 
   def profile
@@ -26,6 +28,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    
     @user = User.find_by(id: params[:id])
     @user.destroy
     respond_to do |format|
@@ -50,5 +53,8 @@ class UsersController < ApplicationController
   end
   def set_friends
     @friends = current_user.friends
+  end
+  def set_friend_request
+    @friend_request = FriendRequest.find(params[:id])
   end
 end

@@ -26,7 +26,7 @@ class FriendRequestsController < ApplicationController
   def update
     respond_to do |format|
       @friend_request.accept
-      format.html { redirect_to current_user, notice: 'Friend Accepted.' }
+      format.html { redirect_to users_path, notice: 'Friend Accepted.' }
       format.json { head :no_content }
     end
   end
@@ -34,7 +34,7 @@ class FriendRequestsController < ApplicationController
   def destroy
     @friend_request.destroy
     respond_to do |format|
-      format.html { redirect_to current_user, notice: 'Friend request deleted' }
+      format.html { redirect_to users_path, alert: 'Friend request deleted' }
       format.json { head :no_content }
     end
   end

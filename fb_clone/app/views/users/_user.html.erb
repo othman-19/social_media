@@ -12,12 +12,12 @@
                                         data: { confirm: "You sure?" } %>  |
         <%= link_to 'New Post', new_post_path %>
       <% elsif @friends.include?(@user)%>
-      <%= link_to "Delete friend", friend_path(@user),method: :delete %>
+        <%= link_to "Delete friend", friend_path(@user),method: :delete %>
       <% elsif @user.pending_friends.include?(current_user) %>
-      <%= link_to "Delete friend request", friend_request_path(@user), :method => :delete %>
-      <%= link_to "Accept friend request", friend_request_path(@user), :method => :put %>
+        <%= link_to "Delete friend request", friend_request_path(get_request(@user, current_user)), :method => :delete %>  |
+        <%= link_to "Accept friend request", friend_request_path(get_request(@user, current_user)), :method => :put %>
       <% elsif current_user.pending_friends.include?(@user) %>
-      <%= link_to "Delete friend request", friend_request_path(@user), :method => :delete %> 
+        <%= link_to "Delete friend request", friend_request_path(get_request(current_user, @user)), :method => :delete %> 
       <% else %>
         <%= link_to "Add Friend", friend_requests_path(:friend_id => @user), :method => :post %>
       <% end %>

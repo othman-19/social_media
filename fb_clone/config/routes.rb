@@ -34,4 +34,5 @@ Rails.application.routes.draw do
   end
   resources :users, only: %i[index show destroy]
   get '/users/:id/profile', to: 'users#profile', as: 'profile'
+    
 end
