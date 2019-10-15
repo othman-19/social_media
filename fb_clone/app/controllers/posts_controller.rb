@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   before_action :current_user, only: %i[create destroy]
   before_action :authorized?, only: %i[update destroy]
   before_action :set_friend_requests_count
-  
+
   def index
     @posts = Post.paginate(page: params[:page], per_page: 5)
   end

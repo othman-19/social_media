@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module UsersHelper
   # Returns the Gravatar for the given user.
   def gravatar_for(user, options = { size: 80 })
@@ -11,9 +12,11 @@ module UsersHelper
   def remove_friend(friend)
     current_user.friends.destroy(friend)
   end
+
   def get_request(user, friend)
     user.friend_requests.where(friend: friend).first
   end
+
   def notification(user)
     incoming_count = FriendRequest.where(friend: user).count
   end
