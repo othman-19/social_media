@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   before_action :set_post, only: %i[edit]
   before_action :authenticate_user!, only: %i[create destroy]
   before_action :current_user
-  before_action :set_friends #, only: %i[index show]
+  before_action :set_friends # , only: %i[index show]
   before_action :set_friend_requests_count
 
   def index

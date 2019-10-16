@@ -4,9 +4,9 @@ require 'rails_helper'
 
 # creating friend request.
 RSpec.describe 'Friend request', type: :feature do
-  let (:user3) {User.create(name: 'username3', email: 'useremail3@gmail.com', password: 'password')}
-  let (:friend3) {User.create(name: 'friendname3', email: 'friendemail3@gmail.com', password: 'password')}
-  let(:friend_request3) {user3.friend_requests.create(friend: friend3)}
+  let (:user3) { User.create(name: 'username3', email: 'useremail3@gmail.com', password: 'password') }
+  let (:friend3) { User.create(name: 'friendname3', email: 'friendemail3@gmail.com', password: 'password') }
+  let(:friend_request3) { user3.friend_requests.create(friend: friend3) }
   scenario 'creating friend request' do
     def accept_request
       friend_request3.accept
