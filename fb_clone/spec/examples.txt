@@ -1,75 +1,94 @@
-example_id                                                   | status  | run_time        |
------------------------------------------------------------- | ------- | --------------- |
-./spec/controllers/comments_controller_spec.rb[1:1:1]        | failed  | 0.00433 seconds |
-./spec/controllers/comments_controller_spec.rb[1:2:1]        | failed  | 0.00508 seconds |
-./spec/controllers/comments_controller_spec.rb[1:3:1]        | failed  | 0.00512 seconds |
-./spec/controllers/comments_controller_spec.rb[1:4:1]        | failed  | 0.00271 seconds |
-./spec/controllers/friend_requests_controller_spec.rb[1:1:1] | unknown |                 |
-./spec/controllers/friend_requests_controller_spec.rb[1:2:1] | unknown |                 |
-./spec/controllers/friend_requests_controller_spec.rb[1:3:1] | unknown |                 |
-./spec/controllers/friend_requests_controller_spec.rb[1:4:1] | unknown |                 |
-./spec/controllers/friends_controller_spec.rb[1:1:1]         | unknown |                 |
-./spec/controllers/friends_controller_spec.rb[1:2:1]         | unknown |                 |
-./spec/controllers/users_controller_spec.rb[1:1:1]           | passed  | 0.0873 seconds  |
-./spec/features/comment/create_comment_spec.rb[1:1]          | passed  | 3.19 seconds    |
-./spec/features/comment/create_comment_spec.rb[1:2]          | passed  | 3.16 seconds    |
-./spec/features/comment/delete_comment_spec.rb[1:1]          | passed  | 2.32 seconds    |
-./spec/features/comment/update_comment_spec.rb[1:1]          | passed  | 2.26 seconds    |
-./spec/features/like/create_like_spec.rb[1:1]                | passed  | 5.18 seconds    |
-./spec/features/post/create_post_spec.rb[1:1]                | passed  | 3.1 seconds     |
-./spec/features/post/create_post_spec.rb[1:2]                | passed  | 3.13 seconds    |
-./spec/features/post/delete_post_spec.rb[1:1]                | passed  | 2.14 seconds    |
-./spec/features/post/update_post_spec.rb[1:1]                | passed  | 2.22 seconds    |
-./spec/features/user/create_user_spec.rb[1:1]                | passed  | 2.1 seconds     |
-./spec/features/user/create_user_spec.rb[1:2]                | passed  | 2.05 seconds    |
-./spec/features/user/create_user_spec.rb[1:3]                | passed  | 2.07 seconds    |
-./spec/features/user/create_user_spec.rb[1:4]                | passed  | 2.05 seconds    |
-./spec/features/user/create_user_spec.rb[1:5]                | passed  | 2.06 seconds    |
-./spec/features/user/delete_user_spec.rb[1:1]                | passed  | 2.11 seconds    |
-./spec/features/user/login_user_spec.rb[1:1]                 | passed  | 2.11 seconds    |
-./spec/features/user/update_user_spec.rb[1:1]                | passed  | 2.36 seconds    |
-./spec/helpers/comments_helper_spec.rb[1:1]                  | pending | 0.00003 seconds |
-./spec/helpers/friend_requests_helper_spec.rb[1:1]           | unknown |                 |
-./spec/helpers/friends_helper_spec.rb[1:1]                   | unknown |                 |
-./spec/helpers/likes_helper_spec.rb[1:1]                     | pending | 0.00002 seconds |
-./spec/models/comment_spec.rb[1:1:1]                         | passed  | 0.03915 seconds |
-./spec/models/comment_spec.rb[1:1:2]                         | passed  | 0.03717 seconds |
-./spec/models/comment_spec.rb[1:1:3]                         | passed  | 0.03981 seconds |
-./spec/models/comment_spec.rb[1:1:4]                         | passed  | 0.03891 seconds |
-./spec/models/comment_spec.rb[1:1:5]                         | passed  | 0.01449 seconds |
-./spec/models/comment_spec.rb[1:2:1]                         | passed  | 0.0017 seconds  |
-./spec/models/comment_spec.rb[1:2:2]                         | passed  | 0.00225 seconds |
-./spec/models/friend_request_spec.rb[1:1:1]                  | passed  | 0.17655 seconds |
-./spec/models/friend_request_spec.rb[1:1:2]                  | failed  | 0.08281 seconds |
-./spec/models/friendship_spec.rb[1:1]                        | unknown |                 |
-./spec/models/like_spec.rb[1:1:1]                            | passed  | 0.02753 seconds |
-./spec/models/like_spec.rb[1:1:2]                            | passed  | 0.03011 seconds |
-./spec/models/like_spec.rb[1:1:3]                            | passed  | 0.03096 seconds |
-./spec/models/like_spec.rb[1:2:1]                            | passed  | 0.00195 seconds |
-./spec/models/like_spec.rb[1:2:2]                            | passed  | 0.00268 seconds |
-./spec/models/post_spec.rb[1:1:1]                            | passed  | 0.01464 seconds |
-./spec/models/post_spec.rb[1:1:2]                            | passed  | 0.01663 seconds |
-./spec/models/post_spec.rb[1:1:3]                            | passed  | 0.01844 seconds |
-./spec/models/post_spec.rb[1:1:4]                            | passed  | 0.00859 seconds |
-./spec/models/post_spec.rb[1:2:1]                            | passed  | 0.00277 seconds |
-./spec/models/user_spec.rb[1:1:1]                            | passed  | 0.02309 seconds |
-./spec/models/user_spec.rb[1:1:2]                            | passed  | 0.02038 seconds |
-./spec/models/user_spec.rb[1:1:3]                            | passed  | 0.02906 seconds |
-./spec/models/user_spec.rb[1:1:4]                            | passed  | 0.02944 seconds |
-./spec/models/user_spec.rb[1:1:5]                            | passed  | 0.01019 seconds |
-./spec/models/user_spec.rb[1:1:6]                            | passed  | 0.00911 seconds |
-./spec/models/user_spec.rb[1:1:7]                            | passed  | 0.00989 seconds |
-./spec/models/user_spec.rb[1:1:8]                            | passed  | 0.03177 seconds |
-./spec/models/user_spec.rb[1:1:9]                            | passed  | 0.03159 seconds |
-./spec/models/user_spec.rb[1:1:10]                           | passed  | 0.02859 seconds |
-./spec/models/user_spec.rb[1:2:1:1]                          | passed  | 0.01236 seconds |
-./spec/views/comments/create.html.erb_spec.rb[1:1]           | pending | 0.00001 seconds |
-./spec/views/comments/destroy.html.erb_spec.rb[1:1]          | pending | 0.00002 seconds |
-./spec/views/comments/new.html.erb_spec.rb[1:1]              | pending | 0.00002 seconds |
-./spec/views/comments/update.html.erb_spec.rb[1:1]           | pending | 0.00002 seconds |
-./spec/views/friend_requests/create.html.erb_spec.rb[1:1]    | unknown |                 |
-./spec/views/friend_requests/destroy.html.erb_spec.rb[1:1]   | unknown |                 |
-./spec/views/friend_requests/index.html.erb_spec.rb[1:1]     | unknown |                 |
-./spec/views/friend_requests/update.html.erb_spec.rb[1:1]    | unknown |                 |
-./spec/views/friends/destroy.html.erb_spec.rb[1:1]           | unknown |                 |
-./spec/views/friends/index.html.erb_spec.rb[1:1]             | unknown |                 |
+example_id                                                        | status  | run_time        |
+----------------------------------------------------------------- | ------- | --------------- |
+./spec/controllers/comments_controller_spec.rb[1:1:1]             | failed  | 0.00433 seconds |
+./spec/controllers/comments_controller_spec.rb[1:2:1]             | failed  | 0.00508 seconds |
+./spec/controllers/comments_controller_spec.rb[1:3:1]             | failed  | 0.00512 seconds |
+./spec/controllers/comments_controller_spec.rb[1:4:1]             | failed  | 0.00271 seconds |
+./spec/controllers/friend_requests_controller_spec.rb[1:1:1]      | unknown |                 |
+./spec/controllers/friend_requests_controller_spec.rb[1:2:1]      | unknown |                 |
+./spec/controllers/friend_requests_controller_spec.rb[1:3:1]      | unknown |                 |
+./spec/controllers/friend_requests_controller_spec.rb[1:4:1]      | unknown |                 |
+./spec/controllers/friends_controller_spec.rb[1:1:1]              | unknown |                 |
+./spec/controllers/friends_controller_spec.rb[1:2:1]              | unknown |                 |
+./spec/controllers/users_controller_spec.rb[1:1:1]                | passed  | 0.04344 seconds |
+./spec/features/comment/create_comment_spec.rb[1:1]               | passed  | 3.15 seconds    |
+./spec/features/comment/create_comment_spec.rb[1:2]               | passed  | 3.18 seconds    |
+./spec/features/comment/delete_comment_spec.rb[1:1]               | passed  | 2.18 seconds    |
+./spec/features/comment/update_comment_spec.rb[1:1]               | passed  | 3.02 seconds    |
+./spec/features/friend_request/accept_friend_request_spec.rb[1:1] | passed  | 3.07 seconds    |
+./spec/features/friend_request/accept_friend_request_spec.rb[1:2] | passed  | 3.06 seconds    |
+./spec/features/friend_request/create_friend_request_spec.rb[1:1] | passed  | 3.05 seconds    |
+./spec/features/friend_request/delete_friend_request_spec.rb[1:1] | passed  | 3.06 seconds    |
+./spec/features/friendships/accept_friendships_spec.rb[1:1]       | passed  | 3.07 seconds    |
+./spec/features/friendships/delete_friendships_spec.rb[1:1]       | passed  | 3.03 seconds    |
+./spec/features/like/create_like_spec.rb[1:1]                     | passed  | 3.17 seconds    |
+./spec/features/post/create_post_spec.rb[1:1]                     | passed  | 3.12 seconds    |
+./spec/features/post/create_post_spec.rb[1:2]                     | passed  | 3.12 seconds    |
+./spec/features/post/delete_post_spec.rb[1:1]                     | passed  | 2.14 seconds    |
+./spec/features/post/update_post_spec.rb[1:1]                     | passed  | 2.17 seconds    |
+./spec/features/user/create_user_spec.rb[1:1]                     | passed  | 2.09 seconds    |
+./spec/features/user/create_user_spec.rb[1:2]                     | passed  | 2.06 seconds    |
+./spec/features/user/create_user_spec.rb[1:3]                     | passed  | 2.07 seconds    |
+./spec/features/user/create_user_spec.rb[1:4]                     | passed  | 2.07 seconds    |
+./spec/features/user/create_user_spec.rb[1:5]                     | passed  | 2.06 seconds    |
+./spec/features/user/delete_user_spec.rb[1:1]                     | passed  | 2.13 seconds    |
+./spec/features/user/login_user_spec.rb[1:1]                      | passed  | 2.15 seconds    |
+./spec/features/user/update_user_spec.rb[1:1]                     | passed  | 2.2 seconds     |
+./spec/helpers/comments_helper_spec.rb[1:1]                       | pending | 0.00003 seconds |
+./spec/helpers/friend_requests_helper_spec.rb[1:1]                | pending | 0.00002 seconds |
+./spec/helpers/friends_helper_spec.rb[1:1]                        | pending | 0.00002 seconds |
+./spec/helpers/likes_helper_spec.rb[1:1]                          | pending | 0.00002 seconds |
+./spec/models/comment_spec.rb[1:1:1]                              | passed  | 0.03378 seconds |
+./spec/models/comment_spec.rb[1:1:2]                              | passed  | 0.04359 seconds |
+./spec/models/comment_spec.rb[1:1:3]                              | passed  | 0.04345 seconds |
+./spec/models/comment_spec.rb[1:1:4]                              | passed  | 0.03913 seconds |
+./spec/models/comment_spec.rb[1:1:5]                              | passed  | 0.01668 seconds |
+./spec/models/comment_spec.rb[1:2:1]                              | passed  | 0.00417 seconds |
+./spec/models/comment_spec.rb[1:2:2]                              | passed  | 0.00241 seconds |
+./spec/models/friend_request_spec.rb[1:1:1]                       | passed  | 0.02975 seconds |
+./spec/models/friend_request_spec.rb[1:1:2]                       | passed  | 0.18385 seconds |
+./spec/models/friend_request_spec.rb[1:1:3]                       | passed  | 0.02371 seconds |
+./spec/models/friend_request_spec.rb[1:1:4]                       | passed  | 0.02213 seconds |
+./spec/models/friend_request_spec.rb[1:1:5]                       | passed  | 0.05522 seconds |
+./spec/models/friend_request_spec.rb[1:1:6]                       | passed  | 0.06224 seconds |
+./spec/models/friend_request_spec.rb[1:2:1:1]                     | passed  | 0.00279 seconds |
+./spec/models/friend_request_spec.rb[1:2:1:2]                     | passed  | 0.00356 seconds |
+./spec/models/friendship_spec.rb[1:1]                             | passed  | 0.02744 seconds |
+./spec/models/friendship_spec.rb[1:2]                             | passed  | 0.0249 seconds  |
+./spec/models/friendship_spec.rb[1:3]                             | passed  | 0.02663 seconds |
+./spec/models/friendship_spec.rb[1:4]                             | passed  | 0.05051 seconds |
+./spec/models/friendship_spec.rb[1:5]                             | passed  | 0.01771 seconds |
+./spec/models/friendship_spec.rb[1:6]                             | passed  | 0.06313 seconds |
+./spec/models/friendship_spec.rb[1:7:1:1]                         | passed  | 0.00186 seconds |
+./spec/models/friendship_spec.rb[1:7:1:2]                         | passed  | 0.00188 seconds |
+./spec/models/like_spec.rb[1:1:1]                                 | passed  | 0.02761 seconds |
+./spec/models/like_spec.rb[1:1:2]                                 | passed  | 0.03216 seconds |
+./spec/models/like_spec.rb[1:1:3]                                 | passed  | 0.07583 seconds |
+./spec/models/like_spec.rb[1:2:1]                                 | passed  | 0.00231 seconds |
+./spec/models/like_spec.rb[1:2:2]                                 | passed  | 0.0025 seconds  |
+./spec/models/post_spec.rb[1:1:1]                                 | passed  | 0.02339 seconds |
+./spec/models/post_spec.rb[1:1:2]                                 | passed  | 0.01865 seconds |
+./spec/models/post_spec.rb[1:1:3]                                 | passed  | 0.0218 seconds  |
+./spec/models/post_spec.rb[1:1:4]                                 | passed  | 0.01003 seconds |
+./spec/models/post_spec.rb[1:2:1]                                 | passed  | 0.00226 seconds |
+./spec/models/user_spec.rb[1:1:1]                                 | passed  | 0.01716 seconds |
+./spec/models/user_spec.rb[1:1:2]                                 | passed  | 0.02212 seconds |
+./spec/models/user_spec.rb[1:1:3]                                 | passed  | 0.01826 seconds |
+./spec/models/user_spec.rb[1:1:4]                                 | passed  | 0.01284 seconds |
+./spec/models/user_spec.rb[1:1:5]                                 | passed  | 0.01321 seconds |
+./spec/models/user_spec.rb[1:1:6]                                 | passed  | 0.00856 seconds |
+./spec/models/user_spec.rb[1:1:7]                                 | passed  | 0.01112 seconds |
+./spec/models/user_spec.rb[1:1:8]                                 | passed  | 0.01195 seconds |
+./spec/models/user_spec.rb[1:1:9]                                 | passed  | 0.01007 seconds |
+./spec/models/user_spec.rb[1:1:10]                                | passed  | 0.03514 seconds |
+./spec/models/user_spec.rb[1:2:1:1]                               | passed  | 0.00467 seconds |
+./spec/views/comments/create.html.erb_spec.rb[1:1]                | pending | 0.00001 seconds |
+./spec/views/comments/destroy.html.erb_spec.rb[1:1]               | pending | 0.00002 seconds |
+./spec/views/comments/new.html.erb_spec.rb[1:1]                   | pending | 0.00002 seconds |
+./spec/views/comments/update.html.erb_spec.rb[1:1]                | pending | 0.00002 seconds |
+./spec/views/friend_requests/create.html.erb_spec.rb[1:1]         | pending | 0.00002 seconds |
+./spec/views/friend_requests/destroy.html.erb_spec.rb[1:1]        | pending | 0.00002 seconds |
+./spec/views/friend_requests/index.html.erb_spec.rb[1:1]          | pending | 0.00003 seconds |
+./spec/views/friend_requests/update.html.erb_spec.rb[1:1]         | pending | 0.00002 seconds |
+./spec/views/friends/destroy.html.erb_spec.rb[1:1]                | pending | 0.00002 seconds |
+./spec/views/friends/index.html.erb_spec.rb[1:1]                  | pending | 0.00003 seconds |

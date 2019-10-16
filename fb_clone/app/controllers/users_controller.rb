@@ -5,14 +5,14 @@ class UsersController < ApplicationController
   # before_action :set_user, only: %i[show edit update destroy]
   before_action :set_post, only: %i[edit]
   before_action :authenticate_user!, only: %i[create destroy]
-  before_action :current_user, only: %i[create destroy]
-  before_action :set_friends
+  before_action :current_user
+  before_action :set_friends #, only: %i[index show]
   before_action :set_friend_requests_count
 
   def index
     @users = User.paginate(page: params[:page], per_page: 20)
     @incoming = FriendRequest.where(friend: current_user)
-    @outgoing = current_user.friend_requests
+    @outgoing = current_user&.friend_requests
   end
 
   def show
@@ -51,7 +51,7 @@ class UsersController < ApplicationController
   end
 
   def set_friends
-    @friends = current_user.friends
+    @friends = current_user&.friends
   end
 
   def set_friend_request
