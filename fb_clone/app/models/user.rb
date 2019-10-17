@@ -14,6 +14,7 @@ class User < ApplicationRecord
   has_many :pending_friends, through: :friend_requests, source: :friend
   has_many :friendships, dependent: :destroy
   has_many :friends, through: :friendships, dependent: :destroy
+  has_many :friends_posts, through: :friends, source: :posts
 
   before_save :downcase_email
 

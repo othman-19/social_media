@@ -47,9 +47,9 @@ gem 'carrierwave'
 gem 'font-awesome-rails'
 gem 'foundation-rails'
 gem 'mini_magick'
+gem 'minitest'
 gem 'rubocop-faker'
 gem 'will_paginate'
-gem 'minitest'
 
 group :production do
   gem 'fog'
