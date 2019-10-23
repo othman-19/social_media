@@ -19,6 +19,7 @@ RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
   config.include Devise::Test::ControllerHelpers, type: :controller
   config.extend ControllerMacros, type: :controller
+  config.include IntegrationSpecHelper, :type => :request
   config.include Warden::Test::Helpers
   config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)
@@ -43,5 +44,16 @@ RSpec.configure do |config|
   end
   config.infer_spec_type_from_file_location!
   config.filter_rails_from_backtrace!
+  Capybara.default_host = 'http://example.org'
+
+  OmniAuth.config.test_mode = true
+  omniauth_hash = { 'provider' => 'facebook',
+                  'uid' => '12345',
+                  'info' => {
+                      'name' => 'tester',
+                      'email' => 'omniauth_tester@test.com',
+                   }
+                  }
+OmniAuth.config.add_mock(:facebook, omniauth_hash)
 end
 # Capybara.default_driver = :selenium_chrome
