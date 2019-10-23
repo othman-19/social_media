@@ -2,7 +2,6 @@
 
 # Users controller
 class UsersController < ApplicationController
-  # before_action :set_user, only: %i[show edit update destroy]
   before_action :set_post, only: %i[edit]
   before_action :authenticate_user!, only: %i[create destroy]
   before_action :current_user
@@ -36,10 +35,6 @@ class UsersController < ApplicationController
   end
 
   private
-
-  # def set_user
-  #   #    @user = User.find(params[:id])
-  # end
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def user_params
