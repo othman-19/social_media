@@ -9,7 +9,7 @@
           <li><%= link_to (fa_icon "envelope", text: "Messages"), authenticated_root_path %></li> 
           <li>
             <%= link_to ((fa_icon "user-plus", text: "Friends" )), friend_requests_index_path%>
-            <% if notification(current_user) && notification(current_user) > 0 %>
+            <% if friend_request_notifications(current_user) && friend_request_notifications(current_user) > 0 %>
               <span id = 'notification'><%= @incoming_count.to_s %></span>
             <% end %>
           </li> 
