@@ -2,6 +2,8 @@
 
 # Project: Social Media 
   A simple app that is similar to facebook created using Rails.
+# Website
+  [Project website (deployed)](https://morning-wildwood-95866.herokuapp.com/ ).
 ## prerequisite
 1. Git.
 2. Code editor.
