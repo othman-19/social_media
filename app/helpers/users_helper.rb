@@ -17,7 +17,4 @@ module UsersHelper
     user.friend_requests.where(friend: friend).first
   end
 
-  def notification(user)
-    FriendRequest.where(friend: user).count
-  end
 end
