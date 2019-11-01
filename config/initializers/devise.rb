@@ -19,7 +19,7 @@ Devise.setup do |config|
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
   config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
-  config.omniauth :facebook, '2662261970683547', 'aa2154623cd6f87a849c5181ac3c9209', callback_url: 'http://localhost:3000/users/auth/facebook/callback'
+  #config.omniauth :facebook, '2662261970683547', 'aa2154623cd6f87a849c5181ac3c9209', callback_url: 'http://localhost:3000/users/auth/facebook/callback'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -297,5 +297,5 @@ Devise.setup do |config|
   # When set to false, does not sign a user in automatically after their password is
   # changed. Defaults to true, so a user is signed in automatically after changing a password.
   # config.sign_in_after_change_password = true
-  # config.omniauth :facebook, '401307487207712', 'bee8c32ea6e46d6b56fb30990db26b7d', callback_url: 'http://localhost:3000/users/auth/facebook/callback'
+  config.omniauth :facebook, '401307487207712', 'bee8c32ea6e46d6b56fb30990db26b7d', callback_url: 'http://localhost:3000/users/auth/facebook/callback'
 end
