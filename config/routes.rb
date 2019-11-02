@@ -27,7 +27,7 @@ Rails.application.routes.draw do
     authenticated :user do
       root 'posts#index', as: :authenticated_root
     end
-
+#https://gentle-lowlands-10800.herokuapp.com/users/auth/facebook/callback
     unauthenticated do
       root 'devise/registrations#new', as: :unauthenticated_root
     end
