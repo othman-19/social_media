@@ -4,7 +4,7 @@
 
   The user will create his own account, write posts that will be visible to his friends.
 
-  This project project was built using Ruby on Rails,Ruby Gems, HTML, CSS, SCSS and Bootstrap.
+  This project project was built using Ruby on Rails, Ruby Gems, HTML, CSS, SCSS and Bootstrap.
 
 ![screenshot](./socialmedia.jpg)
 
