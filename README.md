@@ -83,7 +83,7 @@ Othmane Naamani:
   - [Email:](mailto:othmanenaamani@gmail.com) - othmanenaamani@gmail.com
   - [Portfolio](https://othman-19.github.io/my_portfolio/)  
   - [LinkedIn](https://www.linkedin.com/in/othman-namani/)  
-  - [twitter](https://twitter.com/ONaamani)
+  - [Twitter](https://twitter.com/ONaamani)
   - [DEV Community](https://dev.to/othman) 
   - [Angel List](https://angel.co/othmane-namani) 
 
@@ -93,7 +93,7 @@ Molnar Emese:
   - [Email:](mailto:mse212002@gmail.com) - mse212002@gmail.com
   - [Portfolio]()
   - [LinkedIn](https://www.linkedin.com/in/emesemesimolnar/).  
-  - [twitter](https://twitter.com/buksimesi21) 
+  - [Twitter](https://twitter.com/buksimesi21) 
   - [Angel List]()
 
 ## 🤝 Contributing
