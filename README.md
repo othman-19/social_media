@@ -79,22 +79,22 @@ To get a local copy up and running follow these simple example steps.
 
 Othmane Naamani:
 
-  [Github](https://github.com/othman-19/)  
-  [Email:](mailto:othmanenaamani@gmail.com) - othmanenaamani@gmail.com
-  [Portfolio](https://othman-19.github.io/my_portfolio/).  
-  [LinkedIn](https://www.linkedin.com/in/othman-namani/).  
-  [twitter](https://twitter.com/ONaamani).  
-  [DEV Community](https://dev.to/othman).  
-  [Angel List](https://angel.co/othmane-namani).  
+  - [Github](https://github.com/othman-19/)  
+  - [Email:](mailto:othmanenaamani@gmail.com) - othmanenaamani@gmail.com
+  - [Portfolio](https://othman-19.github.io/my_portfolio/)  
+  - [LinkedIn](https://www.linkedin.com/in/othman-namani/)  
+  - [twitter](https://twitter.com/ONaamani)
+  - [DEV Community](https://dev.to/othman) 
+  - [Angel List](https://angel.co/othmane-namani) 
 
 Molnar Emese:
 
-  [Github](https://github.com/Mesi21)  
-  [Email:](mailto:mse212002@gmail.com) - mse212002@gmail.com
-  [Portfolio]().  
-  [LinkedIn](https://www.linkedin.com/in/emesemesimolnar/).  
-  [twitter](https://twitter.com/buksimesi21).   
-  [Angel List]().  
+  - [Github](https://github.com/Mesi21)  
+  - [Email:](mailto:mse212002@gmail.com) - mse212002@gmail.com
+  - [Portfolio]()
+  - [LinkedIn](https://www.linkedin.com/in/emesemesimolnar/).  
+  - [twitter](https://twitter.com/buksimesi21) 
+  - [Angel List]()
 
 ## 🤝 Contributing
 
