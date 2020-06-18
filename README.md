@@ -85,7 +85,7 @@ Othmane Naamani:
   - [LinkedIn](https://www.linkedin.com/in/othman-namani/)  
   - [Twitter](https://twitter.com/ONaamani)
   - [DEV Community](https://dev.to/othman) 
-  - [Angel List](https://angel.co/othmane-namani) 
+  - [AngelList](https://angel.co/othmane-namani) 
 
 Molnar Emese:
 
@@ -94,7 +94,7 @@ Molnar Emese:
   - [Portfolio]()
   - [LinkedIn](https://www.linkedin.com/in/emesemesimolnar/).  
   - [Twitter](https://twitter.com/buksimesi21) 
-  - [Angel List]()
+  - [AngelList]()
 
 ## 🤝 Contributing
 
